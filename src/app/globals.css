@@ -295,3 +295,26 @@ input, select, textarea {
 .shadow-button {
   box-shadow: 0 4px 12px rgba(59, 104, 188, 0.3);
 }
+
+/* Button text color fixes - ensures white text on primary (blue) buttons */
+.btn-primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground)) !important;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Secondary button - transparent/outlined style with proper text color */
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid hsl(var(--border));
+  color: hsl(var(--foreground));
+  transition: border-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: hsl(var(--primary));
+}
