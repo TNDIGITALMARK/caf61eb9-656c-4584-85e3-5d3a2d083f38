@@ -40,9 +40,20 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-6 md:px-8">
-        <div className="container mx-auto max-w-7xl">
-          <div className="bg-card rounded-3xl shadow-lg p-8 md:p-16 lg:p-20">
+      <section className="pt-24 pb-12 px-6 md:px-8 relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/generated/hero-background.jpg"
+            alt=""
+            fill
+            className="object-cover opacity-10"
+            priority
+          />
+        </div>
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="bg-card/95 backdrop-blur-sm rounded-3xl shadow-lg p-8 md:p-16 lg:p-20">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Left Content */}
               <div className="space-y-6">
@@ -77,10 +88,10 @@ export default function HomePage() {
 
               {/* Right Image */}
               <div className="flex justify-center md:justify-end">
-                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-lg">
+                <div className="relative w-full h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                    src="/generated/hero-team.png"
-                    alt="Professional team collaboration"
+                    src="/generated/hero-collaboration.jpg"
+                    alt="Professional team collaboration in modern office"
                     fill
                     className="object-cover"
                     priority
@@ -128,153 +139,213 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Brand Strategy */}
-            <div className="bg-card rounded-2xl p-8 shadow hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Target className="w-7 h-7 text-primary" strokeWidth={1.5} />
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-md transition-shadow">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/generated/service-brand-strategy.jpg"
+                  alt="Brand strategy and positioning"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-3">Brand Strategy</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Build a powerful brand identity that resonates with your audience and stands out in the market.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Brand positioning & messaging</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Market research & analysis</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Competitive differentiation</span>
-                </li>
-              </ul>
+              <div className="p-8">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <Target className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold uppercase mb-3">Brand Strategy</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Build a powerful brand identity that resonates with your audience and stands out in the market.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Brand positioning & messaging</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Market research & analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Competitive differentiation</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Creative Design */}
-            <div className="bg-card rounded-2xl p-8 shadow hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Palette className="w-7 h-7 text-primary" strokeWidth={1.5} />
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-md transition-shadow">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/generated/service-creative-design.jpg"
+                  alt="Creative design workspace"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-3">Creative Design</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Stunning visual experiences that capture attention and drive engagement across all platforms.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Logo & brand identity design</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Website & app design</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Marketing collateral</span>
-                </li>
-              </ul>
+              <div className="p-8">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <Palette className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold uppercase mb-3">Creative Design</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Stunning visual experiences that capture attention and drive engagement across all platforms.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Logo & brand identity design</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Website & app design</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Marketing collateral</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Digital Marketing */}
-            <div className="bg-card rounded-2xl p-8 shadow hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Megaphone className="w-7 h-7 text-primary" strokeWidth={1.5} />
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-md transition-shadow">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/generated/service-digital-marketing.jpg"
+                  alt="Digital marketing analytics dashboard"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-3">Digital Marketing</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Data-driven campaigns that reach your target audience and convert them into loyal customers.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Social media management</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>SEO & content marketing</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>PPC & paid advertising</span>
-                </li>
-              </ul>
+              <div className="p-8">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <Megaphone className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold uppercase mb-3">Digital Marketing</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Data-driven campaigns that reach your target audience and convert them into loyal customers.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Social media management</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>SEO & content marketing</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>PPC & paid advertising</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Web Development */}
-            <div className="bg-card rounded-2xl p-8 shadow hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Zap className="w-7 h-7 text-primary" strokeWidth={1.5} />
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-md transition-shadow">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/generated/service-web-development.jpg"
+                  alt="Web development workspace"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-3">Web Development</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Fast, secure, and scalable websites built with cutting-edge technology and best practices.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Custom website development</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>E-commerce solutions</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Performance optimization</span>
-                </li>
-              </ul>
+              <div className="p-8">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <Zap className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold uppercase mb-3">Web Development</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Fast, secure, and scalable websites built with cutting-edge technology and best practices.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Custom website development</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>E-commerce solutions</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Performance optimization</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Analytics */}
-            <div className="bg-card rounded-2xl p-8 shadow hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <BarChart3 className="w-7 h-7 text-primary" strokeWidth={1.5} />
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-md transition-shadow">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/generated/service-analytics.jpg"
+                  alt="Business analytics and insights"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-3">Analytics & Insights</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Make informed decisions with comprehensive analytics and actionable insights.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Performance tracking & reporting</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>User behavior analysis</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>ROI optimization</span>
-                </li>
-              </ul>
+              <div className="p-8">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <BarChart3 className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold uppercase mb-3">Analytics & Insights</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Make informed decisions with comprehensive analytics and actionable insights.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Performance tracking & reporting</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>User behavior analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>ROI optimization</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Consulting */}
-            <div className="bg-card rounded-2xl p-8 shadow hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Lightbulb className="w-7 h-7 text-primary" strokeWidth={1.5} />
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-md transition-shadow">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/generated/service-consulting.jpg"
+                  alt="Strategic business consulting"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-3">Strategic Consulting</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Expert guidance to navigate digital transformation and achieve sustainable growth.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Digital transformation roadmaps</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Technology stack recommendations</span>
-                </li>
-                <li className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Growth strategy planning</span>
-                </li>
-              </ul>
+              <div className="p-8">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <Lightbulb className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold uppercase mb-3">Strategic Consulting</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Expert guidance to navigate digital transformation and achieve sustainable growth.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Digital transformation roadmaps</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Technology stack recommendations</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Growth strategy planning</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -292,12 +363,14 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Project 1 */}
-            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-4xl font-bold text-primary mb-2">AURORA</div>
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">Tech Startup Rebrand</p>
-                </div>
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow group">
+              <div className="relative aspect-video overflow-hidden">
+                <Image
+                  src="/generated/work-aurora.jpg"
+                  alt="Aurora tech startup rebrand"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Complete Brand Transformation</h3>
@@ -313,12 +386,14 @@ export default function HomePage() {
             </div>
 
             {/* Project 2 */}
-            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-4xl font-bold text-primary mb-2">NEXUS</div>
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">E-commerce Platform</p>
-                </div>
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow group">
+              <div className="relative aspect-video overflow-hidden">
+                <Image
+                  src="/generated/work-nexus.jpg"
+                  alt="Nexus e-commerce platform"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Digital Commerce Revolution</h3>
@@ -334,12 +409,14 @@ export default function HomePage() {
             </div>
 
             {/* Project 3 */}
-            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-4xl font-bold text-primary mb-2">LUMINA</div>
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">Healthcare Innovation</p>
-                </div>
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow group">
+              <div className="relative aspect-video overflow-hidden">
+                <Image
+                  src="/generated/work-lumina.jpg"
+                  alt="Lumina healthcare platform"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Patient-Centric Digital Experience</h3>
@@ -355,12 +432,14 @@ export default function HomePage() {
             </div>
 
             {/* Project 4 */}
-            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-4xl font-bold text-primary mb-2">MERIDIAN</div>
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">Financial Services</p>
-                </div>
+            <div className="bg-card rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow group">
+              <div className="relative aspect-video overflow-hidden">
+                <Image
+                  src="/generated/work-meridian.jpg"
+                  alt="Meridian fintech platform"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Fintech Platform Launch</h3>
@@ -388,6 +467,102 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* About Section with Office Images */}
+      <section id="about" className="py-16 px-6 md:px-8 bg-muted/50 relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <Image
+            src="/generated/pattern-geometric.jpg"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold uppercase mb-4">About Our Agency</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A creative powerhouse dedicated to transforming brands through innovation and strategy
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold uppercase">We Build Digital Excellence</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                At Apex Digital Collective, we combine creative vision with data-driven strategies to deliver exceptional results. Our team of experts brings decades of combined experience in branding, design, development, and digital marketing.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                We don&apos;t just create campaigns – we build lasting partnerships. Our collaborative approach ensures that every project reflects your unique vision while exceeding industry standards.
+              </p>
+              <div className="grid grid-cols-2 gap-4 pt-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-xl">50+</div>
+                    <div className="text-sm text-muted-foreground">Team Members</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Award className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-xl">25+</div>
+                    <div className="text-sm text-muted-foreground">Awards Won</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/generated/office-workspace.jpg"
+                alt="Our creative office workspace"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg order-2 md:order-1">
+              <Image
+                src="/generated/office-building.jpg"
+                alt="Our modern office building"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-6 order-1 md:order-2">
+              <h3 className="text-2xl font-bold uppercase">Modern Workspace, Global Reach</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Located in the heart of San Francisco, our state-of-the-art facility is designed to foster creativity and collaboration. But our impact extends far beyond our physical location.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                We partner with clients across the globe, from ambitious startups to established enterprises. Our remote-friendly culture and cutting-edge tools enable us to deliver world-class service regardless of geography.
+              </p>
+              <div className="flex gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium uppercase text-sm tracking-wide shadow-button hover:opacity-90 transition-opacity"
+                >
+                  Visit Us
+                </Link>
+                <Link
+                  href="#work"
+                  className="inline-flex items-center gap-2 bg-background border-2 border-border text-foreground px-6 py-3 rounded-full font-medium uppercase text-sm tracking-wide hover:border-primary transition-colors"
+                >
+                  Our Work
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-16 px-6 md:px-8">
         <div className="container mx-auto max-w-7xl">
@@ -410,8 +585,13 @@ export default function HomePage() {
                 &quot;Apex Digital Collective transformed our brand completely. Their strategic approach and creative excellence helped us stand out in a crowded market.&quot;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-bold">SM</span>
+                <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                  <Image
+                    src="/generated/testimonial-sarah.jpg"
+                    alt="Sarah Mitchell"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-bold">Sarah Mitchell</div>
@@ -431,8 +611,13 @@ export default function HomePage() {
                 &quot;Working with this team has been incredible. They delivered beyond our expectations and the results speak for themselves - sales doubled!&quot;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-bold">JC</span>
+                <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                  <Image
+                    src="/generated/testimonial-james.jpg"
+                    alt="James Chen"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-bold">James Chen</div>
@@ -452,8 +637,13 @@ export default function HomePage() {
                 &quot;Professional, creative, and results-driven. They took the time to understand our needs and delivered a solution that exceeded all goals.&quot;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-bold">EP</span>
+                <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                  <Image
+                    src="/generated/testimonial-emily.jpg"
+                    alt="Emily Parker"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-bold">Emily Parker</div>
